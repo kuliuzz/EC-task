@@ -1,0 +1,49 @@
+{
+	"lessons": [
+		{
+			"id": 723,
+			"title": "Hello, New Puppy Parent!",
+			"published": "2018-11-05T09:08:32Z",
+			"day": 1,
+			"is_completed": true,
+			"image": "https://source.unsplash.com/collection/1301659/7ec66af6-69ef-4ac8-983b-e47c4f0dba60",
+			"can_practice": true
+		},
+		{
+			"id": 714,
+			"title": "Study: Housetraining",
+			"published": "2018-12-21T09:25:32Z",
+			"day": 2,
+			"is_completed": true,
+			"image": "https://source.unsplash.com/collection/1301659/f296b1ca-b39e-4711-8823-d00221eacbdc",
+			"can_practice": true
+		},
+		{
+			"id": 721,
+			"title": "Housetraining 1",
+			"published": "2019-01-21T05:13:32Z",
+			"day": 2,
+			"is_completed": false,
+			"image": "https://source.unsplash.com/collection/1301659/c7aaf9b3-501b-4009-8a4f-2b59bfc750e5",
+			"can_practice": true
+		},
+		{
+			"id": 726,
+			"title": "Study: Location And Timing",
+			"published": "2019-02-13T09:55:15Z",
+			"day": 3,
+			"is_completed": false,
+			"image": "https://omd-media-dev.s3.amazonaws.com/images/1762bc32941d41ea9d7b99b25a2a108d.jpg",
+			"can_practice": false
+		},
+		{
+			"id": 713,
+			"title": "Study: Playing",
+			"published": "2019-04-01T012:13:31Z",
+			"day": 3,
+			"is_completed": false,
+			"image": "https://source.unsplash.com/collection/1301659/e56d58e4-6ec8-402d-8489-2eb9a496e73d",
+			"can_practice": false
+		}
+	]
+}

@@ -1,0 +1,33 @@
+@media only screen and (max-width: 500px) {
+    body {
+      font-size: 4.3vw;
+    }
+  }
+#banner{
+    height: 800px;
+}
+#banner div.container{
+    padding-bottom: 246px;
+}
+#lessons{
+    background-color: #e0e0e0 grey lighten-2;
+    border-radius: 10px;
+    padding: 0 1vw;
+}
+.row.white.z-depth-5{
+    overflow:hidden;
+    height: 200px;
+    border-radius: 6px;
+}
+.row.white div{
+    padding: 0px;
+}
+.z-depth-5 > .col.s4.txt{
+    height: 100%;   
+}
+.days{
+    margin: 40px 0;
+}
+h5{
+    margin-bottom: 1.5rem;
+}
