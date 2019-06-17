@@ -3,8 +3,14 @@
     $(document).ready(function(){
         $('.parallax').parallax();
       });
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var options = {edge:'left'};
+        var instances = M.Sidenav.init(elems, options);
+      })
 
-    $.get("tech/data.json", data => createElements(data['lessons']))
+
+      $.get("tech/data.json", data => createElements(data['lessons']))
     const lessonsContainer = $('#lessons')
     
     function createElements(elements){
@@ -27,6 +33,13 @@
         })
     }
     function newDay(element,div_id,counter){
+        const btnRepeat = `<a class="waves-effect waves-light btn btn-repeat" style="border-radius: 40px;"><span style="text-transform: none;">Repeat this lesson</span></a>`;
+        const btnStart = `<a class="waves-effect waves-light btn btn-start" style="border-radius: 40px;"><span style="text-transform: none;">Start now</span></a>`;
+        const btnPreview = `<a class="waves-effect waves-light btn btn-Preview" style="border-radius: 40px;"><span style="text-transform: none;">Preview</span></a>`;
+        let elementBtn = (element.can_practice == true && element.is_completed == true) ? btnRepeat
+                        :(element.can_practice == true && element.is_completed == false) ? btnStart
+                        :btnPreview;
+
         $(                
         `<div class="row white z-depth-5">`+ // style="height:50vh;"
             `<div class="col s4 ">`+           
@@ -39,7 +52,7 @@
             `</div>`+
             `<div class="col s4 txt valign-wrapper" style="height:100%;">`+ 
                 `<div class="valign">`+ 
-                    `<a class="waves-effect waves-light btn btn-dogs" style="border-radius: 40px;"><span style="text-transform: none;">Repeat this lesson</span></a>`+
+                    `${elementBtn}`+
                 `</div>`+
             `</div>`+
         `</div>`
@@ -47,5 +60,30 @@
     }
     console.log(lessons)
     
+    function formView(event){
+        const banner = $('#banner');
+        const lessons = $('#lessons_sections');
+        const form = $('#form');
+console.log(event)
+        if(event.target.id == 'contactBtn' || event.target.id == 'contactBtn2'){
+            banner.addClass("hide");
+            lessons.addClass("hide");
+            form.removeClass("hide");
+        }else{
+            banner.removeClass("hide");
+            lessons.removeClass("hide");
+            form.addClass("hide");
+        }
+    }
+    
+    const submitBtn = $('#submit');
+    const su = $('[href="#form"]')
+    su.on("click", e => formView(e))
+    submitBtn.on("click", e => formView(e))
+    function formSubmit(){
+        
+       
+        
+    }
      
   })()

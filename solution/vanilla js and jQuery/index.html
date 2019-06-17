@@ -6,6 +6,7 @@
         <title>The Dog Lessons</title>
         <meta name="description" content="A website dedicated to learnig how to train your dog so you are both happy.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="tech/modifications.css">
         <script
@@ -16,19 +17,42 @@
     </head>
     <body>
         <nav class="white" role="navigation">
-            <div class="nav-wrapper container"></div>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Logo</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger pink-text"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down" >
+              <li><a href="#lessons_sections" style="color:pink; font-size: 1.4vw;"><strong>Lessons</strong></a></li>
+              <li><a href="#form" id="contactBtn" style="color:pink; font-size: 1.4vw;"><strong>Contact us</strong></a></li>
+            </ul>
+          </div>
         </nav>
+        <ul id="slide-out" class="sidenav">
+          <!-- <li><div class="user-view">
+            <div class="background">
+              <img src="images/office.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div></li> -->
+          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+          <li><a href="#!">Second Link</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Subheader</a></li>
+          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+
         <div id="banner" class="parallax-container">
                 <div class="container">
                     <div class="row center white-text" style="font-size: 30px;">
                         <h1 class="col s12 white-text">How to train your dog</h1>
-                        <p >The modern tutuorial for newbs in dog trainig.</p>
+                        <p ><strong>The modern tutuorial for newbs in dog trainig.</strong></p>
                     </div>
                 </div>
                 <div class="white" id="hello">
                         <div class="section">
                             <div class="row">
-                                <div class="col s12 center">
+                                <div class="col s8 offset-s2 center-align">
                                     <h3>Hello</h3>
                                     <p>and welcome to the wonderful world of dog training! In this coure you will learn step by step
                                         how to make your pesky fluffy friend into a well-mannered companion.
@@ -41,22 +65,69 @@
                 <img src="img/pink_doggy.jpg" style="display: block; bottom: -30px;">
             </div>
         </div>
-        <div class="container">
+        <div class="container"  id="lessons_sections">
             <div class="section">
                 <div class="row">
                     <div class="col s12 left-align">
                         <h3>Lessons</h3>
-                        <p>In this section you will find all available lessons in the tutorial. You can learn at ypur own pace and see your progress.
+                        <p>In this section you will find all available lessons in the tutorial. You can learn at your own pace and monitor your progress. Let the fun begin!
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
             <div class="section" id="lessons">
 
             </div>
         </div>
+        <div class="container " id="form">
+            <div class="row form-margin">
+                <form class="col s12 container">
+                  <div class="row">
+                      <h3 class="left-align" style="margin: 5vw 0 ;">Send us an email</h3>
+                    <div class="input-field col s6">
+                      <input placeholder="Enter your fist and last name" id="names" type="text" class="validate">
+                      <label for="names">Names</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="email_inline" type="email" class="validate">
+                        <label for="email_inline">Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="message" class="materialize-textarea"></textarea>
+                        <label for="message">Write a message</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" id="submit">Submit
+                            <i class="material-icons right">send</i>
+                          </button>
+                  </div>
+                </form>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Useful Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#lessons_sections">Lessons</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#form" id="contactBtn2">Contact us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+               2019 © Copyright Dog Lessons
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
         <script src="tech/app.js"></script>
     </body>
 </html>
