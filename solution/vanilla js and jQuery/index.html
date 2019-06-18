@@ -21,14 +21,14 @@
             <a href="#" class="brand-logo center">Logo</a>
             <a href="#" data-target="slide-out" class="sidenav-trigger pink-text"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down" >
-              <li><a href="#lessons_sections" style="color:pink; font-size: 1.4vw;"><strong>Lessons</strong></a></li>
-              <li><a href="#form" style="color:pink; font-size: 1.4vw;"><strong id="contactBtn" >Contact us</strong></a></li>
+              <li><a href="#lessons_sections" style="color:pink; font-size: 1.4vw;"><strong class="lessonsBtn">Lessons</strong></a></li>
+              <li><a href="#form" style="color:pink; font-size: 1.4vw;"><strong class="contactBtn" >Contact us</strong></a></li>
             </ul>
           </div>
         </nav>
         <ul id="slide-out" class="sidenav">
-          <li><a class="waves-effect sidenav-close" href="#lessons_sections" style="color:pink;"><strong>Lessons</strong></a></li>
-          <li><a class="waves-effect sidenav-close" href="#form" style="color:pink;"><strong id="contactBtn" >Contact us</strong></a></li>
+          <li><a class="waves-effect sidenav-close" href="#lessons_sections" style="color:pink;"><strong class="lessonsBtn">Lessons</strong></a></li>
+          <li><a class="waves-effect sidenav-close" href="#form" style="color:pink;"><strong class="contactBtn" >Contact us</strong></a></li>
           <li><div class="divider"></div></li>
         </ul>
 
@@ -69,7 +69,7 @@
 
             </div>
         </div>
-        <div class="container hide" id="form">
+        <div class="container hide " id="form">
             <div class="row form-margin">
                 <form class="col s12 container">
                   <div class="row">
@@ -88,10 +88,9 @@
                         <textarea id="message" class="materialize-textarea"></textarea>
                         <label for="message">Write a message</label>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" id="submit">Submit
-                            <i class="material-icons right">send</i>
-                          </button>
+                    <button class="btn lessonsBtn waves-effect waves-light" type="submit" id="submit">Submit</button>
                   </div>
+                  <h5 class="hide center" id="falseForm" style="color:red">Please fill out the form!</h5>
                 </form>
             </div>
         </div>
@@ -105,8 +104,8 @@
                 <div class="col l4 offset-l2 s12">
                   <h5 class="white-text">Useful Links</h5>
                   <ul>
-                    <li><a class="grey-text text-lighten-3" href="#lessons_sections">Lessons</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#form" id="contactBtn2">Contact us</a></li>
+                    <li><a class="lessonsBtn grey-text text-lighten-3" href="#lessons_sections">Lessons</a></li>
+                    <li><a class="contactBtn grey-text text-lighten-3" href="#form">Contact us</a></li>
                   </ul>
                 </div>
               </div>

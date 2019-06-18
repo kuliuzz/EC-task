@@ -10,6 +10,31 @@
     padding: 0 1vw;
     margin-bottom: 10vw;
 }
+.pic{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(186,85,211,.7);
+    position:absolute;
+    top:0;
+    left:0;
+    display:flex;
+    align-items: center;
+}
+.completed{
+    display: table;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 70% !important;
+    height: 3w;
+    color:white;
+    font-size:1.5vw;
+}
 .row.white.z-depth-5{
     overflow:hidden;
     height: 200px;
@@ -41,9 +66,90 @@ p{
     margin: 5vw 0 10vw 0;
 }
 .hiddendiv{
-    width: 1px !important;
+    width: 100% !important;
 }
-@media only screen and (max-width: 500px) {
+.btn{
+    border-radius: 40px;
+    text-transform: none;
+    line-height: 1.5;
+
+}
+.btn-repeat{
+    color: purple;
+    border: 2px solid purple;
+    background-color: white;
+    font-weight: 500;
+}
+.btn-start{
+    border-color: white;
+    
+    background-image: linear-gradient(to right, cyan, rgb(51, 153, 255));
+    font-weight: 500;
+}
+.btn-Preview{
+    border-color: white;
+    
+    background-color: black;
+    font-weight: 500;
+}
+.btn:hover { 
+    background-color: purple;
+    color: white;
+  }
+  .ls{
+      color: grey;
+      font-size: 1.5vw;
+      margin: 1vw;
+  }
+  .ttl{
+    font-size:1.5vw;
+    font-weight: bold;
+    margin: 0 1vw;
+  }
+  .completed > i{
+    font-size: 2.5vw; 
+}
+.completed > span{
+    vertical-align:top;
+    margin: 1.2vw;
+}
+
+@media only screen and (max-width: 992px) {
+    p{
+        font-size: 2vh;
+    }
+    .pic{
+        height: 140px;
+    }
+    .row.white.z-depth-5{
+        height: 140px;
+    }
+    .valign > .btn{
+        font-size: 2.5vw;
+    }
+    .valign-wrapper{
+        height: 50% !important;
+    }
+    .ls{
+        font-size: 2.5vw;
+        margin: 0.5vw 2vw;
+    }
+    .ttl{
+      font-size: 2.5vw;
+      margin: 0.5vw 2vw;
+    }
+    .completed{
+        border: none;
+        font-size: 1Svw;
+    }
+    .completed > i{
+        font-size: 5vw; 
+    }
+    .completed > span{
+        display: none;
+    }
+  }
+  @media only screen and (max-width: 700px) {
     body {
       font-size: 4.3vw;
     }
@@ -51,15 +157,17 @@ p{
         font-size: 5vh;
     }
     .valign > .btn{
-        font-size: 5vw;
+        font-size: 3vw;
+    }
+    .valign-wrapper{
+        height: 50% !important;
+    }
+    .ls{
+        font-size: 3vw;
+        margin: 1.5vw;
+    }
+    .ttl{
+      font-size:3vw;
+      margin: 1.5vw;
     }
   }
-@media only screen and (max-width: 1024px) {
-    p{
-        font-size: 2vh;
-    }
-    .valign > .btn{
-        font-size: 1.6vw;
-    }
-  }
-

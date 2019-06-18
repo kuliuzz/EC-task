@@ -1,4 +1,3 @@
-
   (()=>{
     $(document).ready(function(){
         $('.parallax').parallax();
@@ -33,24 +32,26 @@
         })
     }
     function newDay(element,div_id,counter){
-        const btnRepeat = `<a class="waves-effect waves-light btn btn-repeat" style="border-radius: 40px;"><span style="text-transform: none;">Repeat this lesson</span></a>`;
-        const btnStart = `<a class="waves-effect waves-light btn btn-start" style="border-radius: 40px;"><span style="text-transform: none;">Start now</span></a>`;
-        const btnPreview = `<a class="waves-effect waves-light btn btn-Preview" style="border-radius: 40px;"><span style="text-transform: none;">Preview</span></a>`;
+        const btnRepeat = `<a class="waves-effect waves-light btn btn-repeat">Repeat this lesson</a>`;
+        const btnStart = `<a class="waves-effect waves-light btn btn-start">Start now</a>`;
+        const btnPreview = `<a class="waves-effect waves-light btn btn-Preview">Preview</a>`;
         let elementBtn = (element.can_practice == true && element.is_completed == true) ? btnRepeat
                         :(element.can_practice == true && element.is_completed == false) ? btnStart
                         :btnPreview;
 
         $(                
         `<div class="row white z-depth-5">`+ 
-            `<div class="col s4 ">`+           
-                `<img class="responsive-img" src="${element.image}"/>`+
+            `<div class="col s4" style="position: relative;">`+           
+                `<img class="pic" src="${element.image}"/>`+
+                `<div class="overlay">`+
+                    `<div class="completed"><i class="material-icons">check</i><span> Completed</span></div>`+
+                `</div>`+
             `</div>`+
-            `<div class="col s4 left-align txt">`+           
-                `<h6>Lesson ${counter}</h6>`+
-                `<br>`+
-                `<h6>${element.title}</h6>`+
+            `<div class="col l4 s8 left-align">`+           
+                `<h6 class="ls">Lesson ${counter}</h6>`+
+                `<h6 class="ttl">${element.title}</h6>`+
             `</div>`+
-            `<div class="col s4 txt valign-wrapper" style="height:100%;">`+ 
+            `<div class="col l4 s8 valign-wrapper" style="height:100%;">`+ 
                 `<div class="valign">`+ 
                     `${elementBtn}`+
                 `</div>`+
@@ -60,21 +61,63 @@
     }
     
     function formView(event){
+        if(event.target.classList.contains('contactBtn')){
+            console.log('wooooooo')
+
+        }
+        //console.log(event.target.classList)
         const banner = $('#banner');
         const lessons = $('#lessons_sections');
         const form = $('#form');
 
-        if(event.target.id == 'contactBtn' || event.target.id == 'contactBtn2'){
+        if(event.target.classList.contains('contactBtn')){
             banner.addClass("hide");
             lessons.addClass("hide");
             form.removeClass("hide");
-        }else{
+
+        }else if(event.target.classList.contains('lessonsBtn')){
             banner.removeClass("hide");
             lessons.removeClass("hide");
             form.addClass("hide");
+            
+            //$('html,body').scrollTop(0)
         }
     }
     document.addEventListener("click",e => formView(e))
     
-     
+    $('#submit').on("click", ()=>{
+        const msg = $('#message').val();
+        const names = $('#names').val();
+        const mail = $("#email_inline").val()
+        if(msg == '' || names == ''){
+            $('#falseForm').removeClass("hide");
+            return false;
+        }else{
+            if(!validateEmail(mail)){
+                $('#falseForm').removeClass("hide");
+                $('#falseForm').text("Please submit a valid email aress!")
+                return false;
+            }else{
+                console.log(           {
+                    names: names,
+                    message: msg,
+                    email: mail
+                  })
+                // and we post the info to the server
+                // $.post("send_to_server.php",
+                // {
+                //   names: names,
+                //   message: msg,
+                //   email: mail
+                // })
+            }
+            
+        } 
+    }); 
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+    
   })()
