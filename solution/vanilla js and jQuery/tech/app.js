@@ -3,15 +3,15 @@
     $(document).ready(function(){
         $('.parallax').parallax();
       });
-      document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var options = {edge:'left'};
-        var instances = M.Sidenav.init(elems, options);
-      })
 
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+    $('.sidenav').sidenav({
+        closeOnClick:true
+    })
 
-      $.get("tech/data.json", data => createElements(data['lessons']))
-    const lessonsContainer = $('#lessons')
+    $.get("tech/data.json", data => createElements(data['lessons']))
     
     function createElements(elements){
         const lessonsDiv = $('#lessons')
@@ -41,7 +41,7 @@
                         :btnPreview;
 
         $(                
-        `<div class="row white z-depth-5">`+ // style="height:50vh;"
+        `<div class="row white z-depth-5">`+ 
             `<div class="col s4 ">`+           
                 `<img class="responsive-img" src="${element.image}"/>`+
             `</div>`+
@@ -58,13 +58,12 @@
         `</div>`
         ).appendTo(`#day_${div_id}`)
     }
-    console.log(lessons)
     
     function formView(event){
         const banner = $('#banner');
         const lessons = $('#lessons_sections');
         const form = $('#form');
-console.log(event)
+
         if(event.target.id == 'contactBtn' || event.target.id == 'contactBtn2'){
             banner.addClass("hide");
             lessons.addClass("hide");
@@ -75,15 +74,7 @@ console.log(event)
             form.addClass("hide");
         }
     }
+    document.addEventListener("click",e => formView(e))
     
-    const submitBtn = $('#submit');
-    const su = $('[href="#form"]')
-    su.on("click", e => formView(e))
-    submitBtn.on("click", e => formView(e))
-    function formSubmit(){
-        
-       
-        
-    }
      
   })()
